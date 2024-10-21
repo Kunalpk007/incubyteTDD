@@ -1,1 +1,3 @@
-export const add = 10;
+export function add() {
+return 0;
+}
