@@ -3,8 +3,10 @@ export function add(input: string) {
 
       // Split the input into individual numbers by comma
       const numbers = input.split(',');
+      let parsedResult =  numbers.map(str => {
+        const parsedNumber = parseFloat(str);
+        return parsedNumber;
+    });
 
-
-
-return numbers;
+return parsedResult;
 }
