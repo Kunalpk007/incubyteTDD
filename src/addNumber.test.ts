@@ -19,4 +19,10 @@ test('should return the number itself when input is a single number', () => {
   expect(add('5')).toBe(5);
 });
 
+	  //to add the comma seperated input numbers.
+    test('should return the sum of comma separated numbers', () => {
+      expect(add('10,22,30')).toBe(62);
+      expect(add(' 1 , 2 , 3 ')).toBe(6);
+  });
+
 });
