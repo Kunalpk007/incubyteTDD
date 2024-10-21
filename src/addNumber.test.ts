@@ -14,4 +14,9 @@ describe('add function existence tests', () => {
     expect(add('')).toBe(0);
 });
 
+  //to add the comma seperated input numbers.
+  test('should return the sum of comma separated numbers', () => {
+    expect(add('10,22,30')).toBe(62);
+});
+
 });
