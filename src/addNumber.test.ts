@@ -7,4 +7,11 @@ describe('add function existence tests', () => {
     expect(typeof add).toBe('function');
   });
 
+  //Since we are using typescript we dont have to check if the input is String values by default typescript will throw error in IDE.
+
+  //for Empty string the response should be 0
+  test('should return 0 for an empty string', () => {
+    expect(add('')).toBe(0);
+});
+
 });
