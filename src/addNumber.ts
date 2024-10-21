@@ -3,10 +3,20 @@ export function add(input: string) {
 
       // Split the input into individual numbers by comma
         const numbers = input.split(',');
-        const parsedNumber = parseFloat(numbers[0]);
         
+        //included parsing and sumation in same function.
+      const sum = numbers.reduce((acc, num) => {
+        const parsedNumber = parseInt(num, 10); 
+        console.log();
+        if (isNaN(parsedNumber)) {
+            return 0;
+        }
+        return acc + parsedNumber;
+    }, 0);
     
     
 
-return parsedNumber;
+return sum;
 }
+
+console.log(add('invalid'));
