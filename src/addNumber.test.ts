@@ -30,6 +30,12 @@ test('should return the number itself when input is a single number', () => {
       expect(add('0.5,0.25,0.25')).toBe(1);   // Test case 3: Handle decimal numbers
       expect(() => add('qm,1,3,2')).toThrow('Invalid number format');
 
+
   });
+
+  test('should return the sum of numbers with mixed comma and newline separators', () => {
+    expect(add('1,2\n3')).toBe(6);
+    expect(add('10\n20,30')).toBe(60);
+});
 
 });
