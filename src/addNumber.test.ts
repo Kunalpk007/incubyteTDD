@@ -39,8 +39,12 @@ test('should return the number itself when input is a single number', () => {
 
 });
 
-test('should throw an error for multiple negative numbers', () => {
-  expect(() => add('-1,-2,-3')).toThrow('Negatives not allowed: -1, -2, -3');
+test('should throw an error Message for negative numbers', () => {
+  expect(add('10\n20,-30')).toBe('Negatives not allowed: -30'); //with decimal negative values
+});
+
+test('should throw an error Message for multiple negative numbers', () => {
+  expect(add('-1,-2,-3')).toBe('Negatives not allowed: -1, -2, -3');
 });
 
 });
