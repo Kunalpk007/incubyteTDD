@@ -1,8 +1,10 @@
 export function add(input: string) {
     if (input === '') return 0; // Return 0 for empty input
 
+        // Replace newline characters with commas
+        const removeNewlineChar = input.replace(/[\r\n]+/g, ',');
       // Split the input into individual numbers by comma
-        const numbers = input.split(',');
+        const numbers = removeNewlineChar.split(',');
         
         //included parsing and sumation in same function.
       const sum = numbers.reduce((acc, num) => {
@@ -18,5 +20,3 @@ export function add(input: string) {
 
 return sum;
 }
-
-console.log(add('0.5,0.25,0.25'));

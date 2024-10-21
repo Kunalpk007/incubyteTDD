@@ -36,6 +36,13 @@ test('should return the number itself when input is a single number', () => {
   test('should return the sum of numbers with mixed comma and newline separators', () => {
     expect(add('1,2\n3')).toBe(6);
     expect(add('10\n20,30')).toBe(60);
+    expect(add('10.4\n20,30')).toBe(60.4); //with decimals
+    expect(add('10.4\n20,30,-0.4')).toBe(60); //with negative values
+
+});
+
+test('should throw an error for negative numbers', () => {
+  expect(() => add('1,-2,3')).toThrowError('Negatives not allowed: -2');
 });
 
 });
