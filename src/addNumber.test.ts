@@ -48,3 +48,36 @@ test('should throw an error Message for multiple negative numbers', () => {
 });
 
 });
+
+describe('add CustomDelimited String', () => {
+  test('should sum numbers with a custom delimiter', () => {
+      expect(add("//;\n1;2;3")).toBe(6);
+      expect(add("//,\n4,5,6")).toBe(15);
+      expect(add("//|\n1|2|3|4")).toBe(10);
+  });
+
+  test('should handle numbers separated by the default delimiter (comma)', () => {
+      expect(add("1,2,3")).toBe(6);
+      expect(add("4,5")).toBe(9);
+  });
+
+  test('should handle mixed custom and default delimiters', () => {
+      expect(add("//;\n1;2,3")).toBe(6); // 1 + 2 + 3
+      expect(add("//,\n4;5,6")).toBe(15); // 4 + 5 + 6
+  });
+
+  test('should handle empty input', () => {
+      expect(add("//;\n")).toBe(0);
+      expect(add("")).toBe(0);
+  });
+
+  test('should ignore invalid numbers', () => {
+      expect(add("//;\n1;two;3")).toBe(4); // 1 + 3
+      expect(add("//,\n4,invalid,6")).toBe(10); // 4 + 6
+  });
+
+  test('should handle whitespace around numbers', () => {
+      expect(add("//;\n 1 ; 2 ; 3 ")).toBe(6); // 1 + 2 + 3
+      expect(add("//,\n  4 ,  5 ,  6  ")).toBe(15); // 4 + 5 + 6
+  });
+});
