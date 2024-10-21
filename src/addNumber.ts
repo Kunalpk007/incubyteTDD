@@ -7,9 +7,9 @@ export function add(input: string) {
         //included parsing and sumation in same function.
       const sum = numbers.reduce((acc, num) => {
         const parsedNumber = parseFloat(num); 
-        console.log("parsedNumber:",parsedNumber);
+        // console.log("parsedNumber:",parsedNumber);
         if (isNaN(parsedNumber)) {
-            return 0;
+            throw new Error('Invalid number format');
         }
         return acc + parsedNumber;
     }, 0);

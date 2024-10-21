@@ -19,7 +19,7 @@ test('should return the number itself when input is a single number', () => {
   expect(add('5')).toBe(5);
   expect(add('5.a0')).toBe(5);
   expect(add('5 ')).toBe(5);
-  expect(add('invalid')).toBe(0);
+  expect(() => add('invalid')).toThrow('Invalid number format');
 });
 
 	  //to add the comma seperated input numbers.
@@ -28,6 +28,7 @@ test('should return the number itself when input is a single number', () => {
       expect(add(' 1 , 2 , 3 ')).toBe(6); // Handles white spaces in a string  
       expect(add('-1,-2,-3')).toBe(-6); // Test case 2: Handle negative numbers
       expect(add('0.5,0.25,0.25')).toBe(1);   // Test case 3: Handle decimal numbers
+      expect(() => add('qm,1,3,2')).toThrow('Invalid number format');
 
   });
 
