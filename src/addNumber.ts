@@ -6,8 +6,8 @@ export function add(input: string) {
         
         //included parsing and sumation in same function.
       const sum = numbers.reduce((acc, num) => {
-        const parsedNumber = parseInt(num, 10); 
-        console.log();
+        const parsedNumber = parseFloat(num); 
+        console.log("parsedNumber:",parsedNumber);
         if (isNaN(parsedNumber)) {
             return 0;
         }
@@ -19,4 +19,4 @@ export function add(input: string) {
 return sum;
 }
 
-console.log(add('invalid'));
+console.log(add('0.5,0.25,0.25'));

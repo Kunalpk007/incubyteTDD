@@ -27,7 +27,7 @@ test('should return the number itself when input is a single number', () => {
       expect(add('10,22,30')).toBe(62);
       expect(add(' 1 , 2 , 3 ')).toBe(6); // Handles white spaces in a string  
       expect(add('-1,-2,-3')).toBe(-6); // Test case 2: Handle negative numbers
-      expect(add('0.5,0.25,0.25')).toBeCloseTo(1);   // Test case 3: Handle decimal numbers
+      expect(add('0.5,0.25,0.25')).toBe(1);   // Test case 3: Handle decimal numbers
 
   });
 
